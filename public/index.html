@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+  <link rel="stylesheet" href="./style.css">
+  <title>Frontend Mentor | IP Address Tracker</title>
+</head>
+
+<body>
+  <header>
+    <h2>IP Address Tracker</h2>
+    <div class="form">
+      <input type="text" placeholder="Search for any IP address or domain" class="search" id="search">
+      <button onclick="getSearch()"><img src="./images/icon-arrow.svg" alt=""></button>
+    </div>
+    <div class="table">
+      <div class="casilla">
+        <h4>IP Address</h4>
+        <p id="ip"></p>
+      </div>
+      <div class="casilla">
+        <h4>Location</h4>
+        <p id="location"></p>
+      </div>
+      <div class="casilla">
+        <h4>Timezone</h4>
+        <p id="timezone"></p>
+      </div>
+      <div class="casilla">
+        <h4>ISP</h4>
+        <p id="isp"></p>
+      </div>
+    </div>
+  </header>
+
+  <div id="mapid"></div>
+  <!-- add offset value dynamically using the API -->
+  <script src="index.js"></script>
+  <script src="https://api.ipify.org?format=jsonp&callback=showIPAddressMap"></script>
+</body>
+
+</html>
